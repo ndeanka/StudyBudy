@@ -1,0 +1,16 @@
+{% extends 'main.html'%}
+
+{% block content%}
+<h1>This is Our Products</h1>
+<div>
+    <div>
+        {% for product in products%}
+        <div>
+            <h1>{{product.id}} -- <a href="{% url 'room' product.id %}" target="_blank">{{product.language}} </a></h1>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock%}
