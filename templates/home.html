@@ -4,9 +4,9 @@
 <h1>This is Our Products</h1>
 <div>
     <div>
-        {% for product in products%}
+        {% for room in rooms%}
         <div>
-            <h1>{{product.id}} -- <a href="{% url 'room' product.id %}" target="_blank">{{product.language}} </a></h1>
+            <h1>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}} </a> </h1>
         </div>
         
         {% endfor %}
