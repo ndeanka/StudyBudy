@@ -15,7 +15,16 @@
     </div>
 
     {%endfor%}
-    <hr>
 </div>
+
+{% if request.user.is_authenticated%}
+<div class="comment-form">
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <input type="text" name="body" placeholder="wirte you Comment"">
+    </form>
+
+</div>
+{%endif%}
 
 {% endblock %}
