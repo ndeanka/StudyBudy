@@ -11,3 +11,8 @@ a {
     text-decoration: none;
     color: #F2E8CF;
 }
+
+.room-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
