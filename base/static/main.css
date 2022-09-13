@@ -1,4 +1,18 @@
+body {
+    background: #162719;
+    color: #F2E8CF;
+}
+
 .home-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
+}
+a {
+    text-decoration: none;
+    color: #F2E8CF;
+}
+
+.room-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
