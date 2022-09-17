@@ -1,4 +1,4 @@
-from multiprocessing import context
+# from multiprocessing import context
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -10,14 +10,6 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Room, Topic, Message
 from .forms import RoomForm
 
-
-# Create your views here.
-
-# products = [
-#     {'id': 1, 'language': 'Python'},
-#     {'id': 2, 'language': 'JavaScript'},
-#     {'id': 3, 'language': 'Java'},
-# ]
 
 def loginPage(request):
     page = 'login'
@@ -110,7 +102,9 @@ def createRoom(request):
     if request.method == 'POST':
         form = RoomForm(request.POST)
         if form.is_valid():
-            form.save()
+            room = form.save(commit=False)
+            room.host = request.user
+            room.save()
             return redirect('home')
 
     context = {'form': form}
